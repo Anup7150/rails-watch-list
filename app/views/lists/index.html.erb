@@ -1,0 +1,25 @@
+<div class="card-category card-large cover mb-4 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('cover.jpg') %>)">
+
+  <div class="text-center text-white">
+    <h1>Save Any Kind of Movies</h1>
+    <h3 class="typed-js" data-controller="typed-js"></h3>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">My Lists</h3>
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>
+  </div>
+
+  <div class= "row">
+    <% @lists.each do |list| %>
+      <div class="co-12 col-sm-6 col-md-4 mb-3">
+        <%= link_to list.name, list_path(list), class:"text-decoration-none" %>
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1595769816263-9b910be24d5f?q=80&w=1779&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+            <%= list.name %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
