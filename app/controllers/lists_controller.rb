@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @review = Review.new(list: @list)
-    # @bookmark = Bookmark.find(params[:id])
+    @bookmark = Bookmark.new
 
     # @movie = Movie.new
   end
